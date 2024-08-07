@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-   <meta charset="UTF-8">
-   <title>Hello Page</title>
-  </head>
-  <body>
-    <h1>Hello, {{ name }}!</h1>
-    <p>Welcome to our simple Flask app.</p>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block title%}
+Simple Web Notes
+{% endblock %}
+
+{% block body%}
+<main>
+  <div class="note">
+      <h2>Добро пожаловать!</h2>
+      <p>Здесь вы можете оставлять свои заметки, чтобы вернуться к ним позже</p>
+  </div>
+</main>
+{% endblock %}
