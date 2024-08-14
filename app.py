@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, redirect
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 
@@ -19,9 +19,22 @@ class Note(db.Model):
 def index():
   return render_template('index.html')
 
-@app.route('/create-note')
+@app.route('/create-note', methods=['GET', 'POST'])
 def create_note():
-  return render_template('create-note.html')
+  if request.method == 'POST':
+    title = request.form['title']
+    content = request.form['content']
+
+    note = Note(title=title, content=content)
+
+    try:
+      db.session.add(note)
+      db.session.commit()
+      return redirect('/')
+    except:
+      return "При добавлении статьи произошла ошибка"
+  else:
+    return render_template('create-note.html')
 
 
 if __name__ == '__main__':
