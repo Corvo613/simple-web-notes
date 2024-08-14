@@ -19,6 +19,10 @@ class Note(db.Model):
 def index():
   return render_template('index.html')
 
+@app.route('/create-note')
+def create_note():
+  return render_template('create-note.html')
+
 
 if __name__ == '__main__':
   app.run(debug=True)
