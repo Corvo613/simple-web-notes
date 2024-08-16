@@ -37,5 +37,10 @@ def create_note():
     return render_template('create-note.html')
 
 
+@app.route('/notes')
+def notes():
+  notes = Note.query.order_by(Note.id.desc()).all()
+  return render_template('notes.html', notes=notes)
+
 if __name__ == '__main__':
   app.run(debug=True)
