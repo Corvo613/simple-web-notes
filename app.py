@@ -42,5 +42,10 @@ def notes():
   notes = Note.query.order_by(Note.id.desc()).all()
   return render_template('notes.html', notes=notes)
 
+@app.route('/note/<id>')
+def note(id):
+  note = Note.query.get(id)
+  return render_template('note.html', note=note)
+
 if __name__ == '__main__':
   app.run(debug=True)
