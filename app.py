@@ -30,7 +30,7 @@ def create_note():
     try:
       db.session.add(note)
       db.session.commit()
-      return redirect('/')
+      return redirect('/notes')
     except:
       return "При добавлении статьи произошла ошибка"
   else:
