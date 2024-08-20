@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link href="/static/style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 </head>
 <body>
-    <header>
-        Simple Web Notes
-    </header>
+  <header>
+    <h1><a href="/">Simple Web Notes</a></h1>
+    <nav>
+        <a href="/create-note">Создать заметку</a>
+        <a href="/notes">Все заметки</a>
+    </nav>
+</header>
     {% block body %}{% endblock %}
     <footer>
-        <p>&copy; Simple Web Notes</p>
-    </footer>
+      <p class="footer-text">&copy; 2024 Simple Web Notes. All rights reserved.</p>
+  </footer>
 </body>
 </html>

@@ -5,12 +5,12 @@ All notes
 {% endblock %}
 
 {% block body%}
-<main>
+<div class="notes-container">
     {% for note in notes %}
   <div class="note">
       <h2><a href="/note/{{ note.id }}">{{ note.title }}</a></h2>
       <p>{{ note.content }}</p>
   </div>
     {% endfor %}
-</main>
+  </div>
 {% endblock %}

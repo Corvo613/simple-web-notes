@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block body%}
-<main>
+<div class="notes-container">
   <div class="note">
       <h2>{{ note.title }}</h2>
       <p>{{ note.content }}</p>
+      <button type="submit">Редактировать</button>
+      <button type="submit">Удалить</button>
   </div>
-</main>
+</div>
 {% endblock %}
