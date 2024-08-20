@@ -9,8 +9,11 @@
   <div class="note">
       <h2>{{ note.title }}</h2>
       <p>{{ note.content }}</p>
+      <form action="/delete-note" method="POST">
+        <input type="text" name="id" value="{{ note.id }}" hidden>
+        <button type="submit">Удалить</button>
+      </form>
       <button type="submit">Редактировать</button>
-      <button type="submit">Удалить</button>
   </div>
 </div>
 {% endblock %}

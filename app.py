@@ -47,5 +47,17 @@ def note(id):
   note = Note.query.get(id)
   return render_template('note.html', note=note)
 
+@app.route('/delete-note', methods=['POST'])
+def delete_note():
+  id = request.form['id']
+  note = Note.query.get(id)
+
+  try:
+    db.session.delete(note)
+    db.session.commit()
+    return redirect('/notes')
+  except:
+    return "При удалении заметки прозошла ошибка"
+
 if __name__ == '__main__':
   app.run(debug=True)
